@@ -30,6 +30,7 @@ public abstract class BaseDialog {
     protected Integer titleTextColor = null;
 
     protected boolean okClicked = false;
+    protected boolean neverClicked = false;
     protected boolean curved = false;
     protected boolean mustBeOnFuture = false;
     protected int minutesStep = WheelMinutePicker.STEP_MINUTES_DEFAULT;

@@ -22,6 +22,34 @@
             >
 
             <TextView
+                android:id="@+id/buttonNever"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="left|center_vertical"
+                android:gravity="center"
+                android:paddingLeft="20dp"
+                android:paddingRight="25dp"
+                android:text="Never"
+                android:textAllCaps="true"
+                android:textColor="@color/picker_button_background_selected"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center|center_vertical"
+                android:gravity="center"
+                android:paddingLeft="20dp"
+                android:paddingRight="25dp"
+                android:text="Set End Date"
+                android:textAllCaps="true"
+                android:textColor="@color/picker_button_background_selected"
+                android:textStyle="bold"
+                />
+
+
+            <TextView
                 android:id="@+id/buttonOk"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"

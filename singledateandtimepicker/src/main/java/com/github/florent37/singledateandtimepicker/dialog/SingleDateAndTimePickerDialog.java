@@ -54,11 +54,28 @@ public class SingleDateAndTimePickerDialog extends BaseDialog {
         picker = (SingleDateAndTimePicker) view.findViewById(R.id.picker);
 
         final TextView buttonOk = (TextView) view.findViewById(R.id.buttonOk);
+        final TextView buttonNever = (TextView) view.findViewById(R.id.buttonNever);
+
         if (buttonOk != null) {
             buttonOk.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     okClicked = true;
+                    close();
+                }
+            });
+
+            if (mainColor != null) {
+                buttonOk.setTextColor(mainColor);
+            }
+        }
+
+        if (buttonNever != null) {
+            buttonNever.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    okClicked = false;
+                    neverClicked = true;
                     close();
                 }
             });
@@ -177,8 +194,9 @@ public class SingleDateAndTimePickerDialog extends BaseDialog {
         super.close();
         bottomSheetHelper.hide();
 
-        if (listener != null && okClicked) {
-            listener.onDateSelected(picker.getDate());
+        if (listener != null) {
+            if (okClicked) listener.onDateSelected(picker.getDate());
+            else if (neverClicked) listener.onDateSelected(null);
         }
     }
 

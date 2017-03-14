@@ -108,6 +108,16 @@ public class SingleDateAndTimePickerDialog extends BaseDialog {
             }
         }
 
+        TextView pickerTitle = (TextView) view.findViewById(R.id.picker_title);
+        if (pickerTitle != null) {
+            pickerTitle.setText(title);
+
+            if (titleTextColor != null) {
+                titleTextView.setTextColor(titleTextColor);
+            }
+        }
+
+
         final View pickerTitleHeader = view.findViewById(R.id.pickerTitleHeader);
         if (mainColor != null && pickerTitleHeader != null) {
             pickerTitleHeader.setBackgroundColor(mainColor);

@@ -32,10 +32,10 @@
                 android:text="Never"
                 android:textAllCaps="true"
                 android:textColor="@color/picker_button_background_selected"
-                android:textStyle="bold"
                 />
 
             <TextView
+                android:id="@+id/picker_title"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_gravity="center|center_vertical"
@@ -47,6 +47,7 @@
                 android:textColor="@color/picker_button_background_selected"
                 android:textStyle="bold"
                 />
+
 
             <TextView
                 android:id="@+id/buttonOk"
@@ -60,7 +61,6 @@
                 android:text="@android:string/ok"
                 android:textAllCaps="true"
                 android:textColor="@color/picker_button_background_selected"
-                android:textStyle="bold"
                 />
 
         </FrameLayout>

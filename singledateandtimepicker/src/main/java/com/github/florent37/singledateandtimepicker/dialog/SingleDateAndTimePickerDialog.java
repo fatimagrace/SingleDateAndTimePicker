@@ -73,7 +73,7 @@ public class SingleDateAndTimePickerDialog extends BaseDialog {
         }
 
         if (buttonNever != null) {
-            if (!cancelTitle.isEmpty()) buttonNever.setText(cancelTitle);
+            if (cancelTitle != null && !cancelTitle.isEmpty()) buttonNever.setText(cancelTitle);
             buttonNever.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {

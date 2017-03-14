@@ -81,7 +81,7 @@ public class SingleDateAndTimePickerDialog extends BaseDialog {
             });
 
             if (mainColor != null) {
-                buttonOk.setTextColor(mainColor);
+                buttonNever.setTextColor(mainColor);
             }
         }
 

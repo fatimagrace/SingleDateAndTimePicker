@@ -22,6 +22,8 @@ public class SingleDateAndTimePickerDialog extends BaseDialog {
 
     @Nullable
     private String title;
+    @Nullable
+    private String cancelTitle;
 
     private SingleDateAndTimePickerDialog(Context context) {
         this(context, false);
@@ -71,6 +73,7 @@ public class SingleDateAndTimePickerDialog extends BaseDialog {
         }
 
         if (buttonNever != null) {
+            if (!cancelTitle.isEmpty()) buttonNever.setText(cancelTitle);
             buttonNever.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -173,6 +176,11 @@ public class SingleDateAndTimePickerDialog extends BaseDialog {
         return this;
     }
 
+    public SingleDateAndTimePickerDialog setCancelTitle(@Nullable String title) {
+        this.cancelTitle = title;
+        return this;
+    }
+
     public SingleDateAndTimePickerDialog setMustBeOnFuture(boolean mustBeOnFuture) {
         this.mustBeOnFuture = mustBeOnFuture;
         return this;
@@ -223,6 +231,9 @@ public class SingleDateAndTimePickerDialog extends BaseDialog {
 
         @Nullable
         private String title;
+
+        @Nullable
+        private String buttonCancelTitle;
 
         private boolean bottomSheet;
 
@@ -313,6 +324,10 @@ public class SingleDateAndTimePickerDialog extends BaseDialog {
             return this;
         }
 
+        public Builder titleButtonCancel(@Nullable String title) {
+            this.buttonCancelTitle = title;
+            return this;
+        }
 
         public SingleDateAndTimePickerDialog build() {
             final SingleDateAndTimePickerDialog dialog = new SingleDateAndTimePickerDialog(context, bottomSheet)
@@ -323,7 +338,8 @@ public class SingleDateAndTimePickerDialog extends BaseDialog {
                     .setMaxDateRange(maxDate)
                     .setMinDateRange(minDate)
                     .setDefaultDate(defaultDate)
-                    .setMustBeOnFuture(mustBeOnFuture);
+                    .setMustBeOnFuture(mustBeOnFuture)
+                    .setCancelTitle(buttonCancelTitle);
 
             if (mainColor != null) {
                 dialog.setMainColor(mainColor);

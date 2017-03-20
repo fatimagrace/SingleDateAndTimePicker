@@ -8,8 +8,8 @@
 
     <LinearLayout
         android:id="@+id/sheetContentLayout"
-        android:layout_height="wrap_content"
         android:layout_width="300dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:background="@android:color/white"
         android:elevation="4dp"
@@ -20,8 +20,8 @@
             android:id="@+id/pickerTitleHeader"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:background="@color/picker_background"
             android:layout_marginBottom="20dp"
+            android:background="@color/picker_background"
             >
 
             <TextView
@@ -29,10 +29,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:textSize="18sp"
                 android:text="The title"
-                android:textStyle="bold"
                 android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
                 />
 
         </FrameLayout>
@@ -60,8 +60,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_gravity="right|center_vertical"
-                android:gravity="center"
                 android:background="?android:attr/selectableItemBackground"
+                android:gravity="center"
                 android:paddingLeft="20dp"
                 android:paddingRight="25dp"
                 android:text="@android:string/ok"

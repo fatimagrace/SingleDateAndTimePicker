@@ -65,7 +65,7 @@ public class BottomSheetHelper {
                             .setOnClickListener(new View.OnClickListener() {
                                 @Override
                                 public void onClick(View view) {
-                                    hide();
+                                    //hide();
                                 }
                             });
 

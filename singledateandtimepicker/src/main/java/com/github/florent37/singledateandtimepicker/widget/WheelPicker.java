@@ -851,19 +851,27 @@ public abstract class WheelPicker extends View {
         }
 
         final int itemCount = adapter.getItemCount();
+        String endValue = adapter.getItemText(itemCount - 1);
         for (int i = 0; i < itemCount; ++i) {
             final String object = adapter.getItemText(i);
 
             try {
-                int intItem = Integer.parseInt(formatItem);
-                int intObject = Integer.parseInt(object);
-                if (intItem == intObject) {
-                    return i;
+                int intEndValue = Integer.parseInt(endValue);
+                if (intEndValue > 12) {
+
+                    int intItem = Integer.parseInt(formatItem);
+                    int intObject = Integer.parseInt(object);
+
+                    if (intItem == intObject) return i;
+                    else {
+                        int end = intObject + 5;
+                        if (intItem > intObject && intItem < end) return i;
+                    }
+                    
                 } else {
-                    int end = intObject + 5;
-                    if (intItem > intObject && intItem < end)
-                        return i;
+                    if (formatItem.equals(object)) return i;
                 }
+
             } catch (Exception e) {
                 if (formatItem.equals(object)) {
                     return i;

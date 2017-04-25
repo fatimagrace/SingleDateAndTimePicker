@@ -847,7 +847,12 @@ public abstract class WheelPicker extends View {
 
         String today = getFormattedValue(new Date());
         if (today.equals(formatItem)) {
-            return getDefaultItemPosition();
+            try {
+                int intFormatItem = Integer.parseInt(formatItem);
+                if (intFormatItem <= 55) return getDefaultItemPosition();
+            } catch (Exception e) {
+                return getDefaultItemPosition();
+            }
         }
 
         final int itemCount = adapter.getItemCount();
@@ -867,7 +872,7 @@ public abstract class WheelPicker extends View {
                         int end = intObject + 5;
                         if (intItem > intObject && intItem < end) return i;
                     }
-                    
+
                 } else {
                     if (formatItem.equals(object)) return i;
                 }

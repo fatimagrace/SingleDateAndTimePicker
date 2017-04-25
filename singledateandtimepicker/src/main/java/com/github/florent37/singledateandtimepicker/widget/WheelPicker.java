@@ -849,7 +849,7 @@ public abstract class WheelPicker extends View {
         if (today.equals(formatItem)) {
             try {
                 int intFormatItem = Integer.parseInt(formatItem);
-                if (intFormatItem <= 55) return getDefaultItemPosition();
+                if (intFormatItem < 55) return getDefaultItemPosition();
             } catch (Exception e) {
                 return getDefaultItemPosition();
             }

@@ -856,7 +856,7 @@ public abstract class WheelPicker extends View {
 
             try {
                 int intItem = Integer.parseInt(formatItem);
-                int intObject = Integer.parseInt(formatItem);
+                int intObject = Integer.parseInt(object);
                 if (intItem == intObject) {
                     return i;
                 } else {
